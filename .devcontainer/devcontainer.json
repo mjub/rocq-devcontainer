@@ -1,7 +1,12 @@
 {
     // Use a slightly modified Coq Docker image, to also include the VSCode language server.
     "build": {
-        "dockerfile": "Dockerfile.coq"
+        "dockerfile": "Dockerfile.coq",
+        // Pin versions.
+        "args": {
+            "COQ_VERSION": "8.20-ocaml-4.14-flambda",
+            "VSCOQ_VERSION": "2.2.1"
+        }
     },
     "forwardPorts": [31517],
     "customizations": {
@@ -9,7 +14,8 @@
             "extensions": [
                 // Easy access to Unicode math characters.
                 "GuidoTapia2.unicode-math-vscode",
-                "maximedenes.vscoq",
+                // The version here should match VSCOQ_VERSION above.
+                "maximedenes.vscoq@2.2.1",
                 // Preview the generated documentation at http://127.0.0.1:31517/.
                 "ritwickdey.LiveServer"
             ],

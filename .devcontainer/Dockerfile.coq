@@ -1,4 +1,5 @@
-FROM coqorg/coq
+ARG COQ_VERSION
+FROM coqorg/coq:${COQ_VERSION}
 
-RUN opam update --yes
-RUN opam install --yes vscoq-language-server
+ARG VSCOQ_VERSION
+RUN opam install --yes vscoq-language-server.${VSCOQ_VERSION}
