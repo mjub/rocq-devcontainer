@@ -1,0 +1,59 @@
+# Deploy Rocq documentation to GitHub Pages
+#
+# Triggers on pushes to main branch when .v files or this workflow change.
+# Uses the same Rocq Docker image as the devcontainer for consistency.
+
+name: Deploy Documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.v"
+      - ".github/workflows/deploy-docs.yml"
+  workflow_dispatch: # Allow manual trigger
+
+# Prevent concurrent deployments
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+# Minimal permissions
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
+      options: --user root  # Avoid permission issues with GitHub Actions workspace
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build documentation
+        run: make rocq-html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: html/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
