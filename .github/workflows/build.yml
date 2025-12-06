@@ -1,16 +1,16 @@
-# Deploy Rocq documentation to GitHub Pages
+# Build and deploy Rocq project to GitHub Pages
 #
 # Triggers on pushes to main branch when .v files or this workflow change.
 # Uses the same Rocq Docker image as the devcontainer for consistency.
 
-name: Deploy Documentation
+name: Build and Deploy
 
 on:
   push:
     branches: [main]
     paths:
       - "**.v"
-      - ".github/workflows/deploy-docs.yml"
+      - ".github/workflows/build.yml"
   workflow_dispatch: # Allow manual trigger
 
 # Prevent concurrent deployments
@@ -33,11 +33,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Build documentation
+      - name: Build all
         run: |
           # Source opam environment from the rocq user's installation
           eval $(opam env --root=/home/rocq/.opam --set-root)
-          make rocq-html
+          make all
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
