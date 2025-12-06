@@ -1,4 +1,5 @@
 {
+    "name": "Rocq Development",
     // Use a slightly modified Rocq Docker image, to also include the VSCode language server.
     "build": {
         "dockerfile": "Dockerfile.rocq",
@@ -8,9 +9,24 @@
             "VSROCQ_VERSION": "2.3.1"
         }
     },
+    // Proper signal handling via tini; prevents zombie processes.
+    "init": true,
+    // Auto-confirm opam prompts.
+    "containerEnv": {
+        "OPAMYES": "1"
+    },
     "forwardPorts": [
         31517
     ],
+    "portsAttributes": {
+        "31517": {
+            "label": "Documentation Server",
+            "onAutoForward": "silent"
+        }
+    },
+    "otherPortsAttributes": {
+        "onAutoForward": "silent"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
