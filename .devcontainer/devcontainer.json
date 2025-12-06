@@ -1,31 +1,30 @@
 {
-    // Use a slightly modified Coq Docker image, to also include the VSCode language server.
+    // Use a slightly modified Rocq Docker image, to also include the VSCode language server.
     "build": {
-        "dockerfile": "Dockerfile.coq",
+        "dockerfile": "Dockerfile.rocq",
         // Pin versions.
         "args": {
-            "COQ_VERSION": "8.20-ocaml-4.14-flambda",
-            "VSCOQ_VERSION": "2.2.1"
+            "ROCQ_VERSION": "9.0.1-native-ocaml-4.14.2-flambda",
+            "VSROCQ_VERSION": "2.3.1"
         }
     },
-    "forwardPorts": [31517],
+    "forwardPorts": [
+        31517
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
                 // Easy access to Unicode math characters.
                 "GuidoTapia2.unicode-math-vscode",
-                // The version here should match VSCOQ_VERSION above.
-                "maximedenes.vscoq@2.2.1",
+                // The version here should match VSROCQ_VERSION above.
+                "rocq-prover.vsrocq@2.3.1",
                 // Preview the generated documentation at http://127.0.0.1:31517/.
                 "ritwickdey.LiveServer"
             ],
             "settings": {
                 // Font ligatures are nice in this case.
                 "editor.fontLigatures": true,
-                // Font size is broken with VSCoq, so you need to zoom.
-                "editor.fontSize": 13,
-                "window.zoomLevel": 2,
-                "[coq]": {
+                "[rocq]": {
                     "editor.tabSize": 2,
                     // Because we want to use fancy Unicode characters sometimes.
                     "editor.unicodeHighlight.ambiguousCharacters": false

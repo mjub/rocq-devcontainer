@@ -1,0 +1,5 @@
+ARG ROCQ_VERSION
+FROM rocq/rocq-prover:${ROCQ_VERSION}
+
+ARG VSROCQ_VERSION
+RUN opam install --yes vsrocq-language-server.${VSROCQ_VERSION}

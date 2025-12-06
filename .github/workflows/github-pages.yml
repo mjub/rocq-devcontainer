@@ -9,8 +9,8 @@ jobs:
     container: archlinux
 
     steps:
-      - name: Install Coq
-        run: pacman -Sy --noconfirm base-devel coq
+      - name: Install Rocq
+        run: pacman -Sy --noconfirm base-devel rocq
 
       - name: Checkout
         uses: actions/checkout@v4

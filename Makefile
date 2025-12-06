@@ -1,17 +1,17 @@
-# Compile Coq files and generate documentation with a single Make command.
+# Compile Rocq files and generate documentation with a single Make command.
 
 VFILES := $(shell find . -name '*.v')
-CMD := coq-all real-all coq-html coq-clean
+CMD := rocq-all real-all rocq-html rocq-clean
 
-all: coq-all coq-html
+all: rocq-all rocq-html
 
-clean: coq-clean
-	@rm -rf Makefile.coq Makefile.coq.conf html
+clean: rocq-clean
+	@rm -rf CoqMakefile CoqMakefile.conf html
 
-$(CMD): Makefile.coq
-	@+$(MAKE) -f $< $(subst coq-,,$@)
+$(CMD): CoqMakefile
+	@+$(MAKE) -f $< $(subst rocq-,,$@)
 
-Makefile.coq: _CoqProject Makefile ${VFILES}
-	@$(COQBIN)coq_makefile -f $< -o $@ $(shell coqdep -sort ${VFILES})
+CoqMakefile: _CoqProject Makefile ${VFILES}
+	@$(ROCQBIN)rocq makefile -f $< -o $@ $(shell rocq dep -sort ${VFILES})
 
-.PHONY: ${CMD} $(subst coq-,,${CMD})
+.PHONY: ${CMD} $(subst rocq-,,${CMD})
