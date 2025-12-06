@@ -4,12 +4,49 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build all",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated",
+                "showReuseMessage": false
+            }
+        },
+        {
             "label": "Build documentation",
             "type": "shell",
             "command": "make",
-            "args": ["coq-html"],
+            "args": [
+                "rocq-html"
+            ],
+            "problemMatcher": [],
             "presentation": {
-                "reveal": "never"
+                "reveal": "silent",
+                "panel": "dedicated",
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated",
+                "showReuseMessage": false
             }
         }
     ]
