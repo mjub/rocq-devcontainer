@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
-      options: --user root  # Avoid permission issues with GitHub Actions workspace
+      # Runs as default user (rocq, UID=1000) with opam environment configured
 
     steps:
       - name: Checkout
