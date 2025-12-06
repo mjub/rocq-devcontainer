@@ -27,14 +27,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
-      # Runs as default user (rocq, UID=1000) with opam environment configured
+      options: --user root  # Required for GitHub Actions file permissions
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
       - name: Build documentation
-        run: make rocq-html
+        run: |
+          # Source opam environment from the rocq user's installation
+          eval $(opam env --root=/home/rocq/.opam --set-root)
+          make rocq-html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
