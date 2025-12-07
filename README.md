@@ -1,6 +1,6 @@
 # [🏗️ Rocq Devcontainer Template](https://github.com/mjub/rocq-devcontainer)
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open%20in%20VS%20Code&color=blue&logo=visual-studio-code)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mjub/rocq-devcontainer)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open%20in%20VS%20Code&color=blue)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mjub/rocq-devcontainer)
 ![Rocq](https://img.shields.io/badge/Rocq-9.0.1-orange)
 ![OCaml](https://img.shields.io/badge/OCaml-4.14.2-orange?logo=ocaml)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
