@@ -1,7 +1,4 @@
-# Build and deploy Rocq project to GitHub Pages
-#
-# Triggers on pushes to main branch when .v files or this workflow change.
-# Uses the same Rocq Docker image as the devcontainer for consistency.
+# Build Rocq project and deploy documentation to GitHub Pages.
 
 name: Build and Deploy
 
@@ -11,14 +8,12 @@ on:
     paths:
       - "**.v"
       - ".github/workflows/build.yml"
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
-# Prevent concurrent deployments
 concurrency:
   group: pages
   cancel-in-progress: true
 
-# Minimal permissions
 permissions:
   contents: read
 
@@ -27,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
-      options: --user root  # Required for GitHub Actions file permissions
+      options: --user root
 
     steps:
       - name: Checkout
@@ -35,7 +30,6 @@ jobs:
 
       - name: Build all
         run: |
-          # Source opam environment from the rocq user's installation
           eval $(opam env --root=/home/rocq/.opam --set-root)
           make all
 
