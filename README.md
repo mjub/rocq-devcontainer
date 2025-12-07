@@ -134,6 +134,7 @@ Due to devcontainer spec limitations, you must update **two places** in `.devcon
 |-------|----------|
 | Container won't build | Ensure Docker is running with at least 4GB RAM allocated |
 | VSRocq not responding | Reload the window: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → `Developer: Reload Window` |
+| Error: `Cannot find a physical path bound to logical path LibraryName.Filename` | Build the project first (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> or `make all`), then reload the window so VSRocq can see the compiled library files |
 | Proof checking slow | The first build compiles dependencies; subsequent runs are faster |
 
 ---
