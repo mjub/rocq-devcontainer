@@ -1,10 +1,11 @@
 # [🏗️ Rocq Devcontainer Template](https://github.com/mjub/rocq-devcontainer)
 
-[![Build and Deploy](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml/badge.svg)](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open%20in%20VS%20Code&color=blue)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mjub/rocq-devcontainer)
 ![Rocq](https://img.shields.io/badge/Rocq-9.0.1-orange)
-![OCaml](https://img.shields.io/badge/OCaml-4.14.2-orange)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue)
-![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green)
+![OCaml](https://img.shields.io/badge/OCaml-4.14.2-orange?logo=ocaml)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green?logo=github)
+[![Build and Deploy](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml/badge.svg)](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml)
 
 A **zero-configuration** development environment for [Rocq](https://rocq-prover.org/) (formerly Coq) theorem proving.
 
@@ -20,7 +21,9 @@ Getting a working Rocq setup can be surprisingly frustrating. Version mismatches
 
 ### 1. Create Your Repository
 
-This is a **template repository**. Click the green **"Use this template"** button on GitHub, then select **"Create a new repository"**.
+This is a **template repository**. You can create your own copy instantly:
+
+[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-238636?logo=github)](https://github.com/mjub/rocq-devcontainer/generate)
 
 > 💡 If you want automatic documentation deployment, enable **GitHub Pages** in your new repository:
 > - Go to **Settings → Pages**
@@ -78,7 +81,7 @@ The [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey
 Every push to `main` that modifies a `.v` file triggers a GitHub Actions workflow that:
 1. ✅ Validates all proofs by building the project
 2. 📄 Generates HTML documentation
-3. 🌐 Deploys to GitHub Pages at `https://<username>.github.io/<repository>/`
+3. 🌐 Deploys to GitHub Pages at `https://<username>.github.io/<repository>/` (typically < 2 mins ⚡)
 
 ---
 
