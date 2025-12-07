@@ -37,7 +37,8 @@ ROCQBIN ?=
 all: rocq-all rocq-html ## Build all and generate documentation
 
 clean: rocq-clean ## Remove all generated files
-	@rm -rf CoqMakefile CoqMakefile.conf html
+	@rm -rf CoqMakefile CoqMakefile.conf html theories/.coq-native
+	@find . -name ".*.aux" -delete
 
 help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?##' $(MAKEFILE_LIST) | sort | \

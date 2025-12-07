@@ -5,14 +5,10 @@ Require Import Utf8.
 (** Triple negation elimination: a classic exercise in propositional logic. *)
 Theorem double_negation : ∀ P : Prop, ¬ ¬ ¬ P -> ¬ P.
 Proof.
-  intro.
-  unfold not.
-  intro.
-  intro.
-  apply H.
-  intro.
-  apply H1.
-  exact H0.
+  intros P Hnnn Hp.
+  apply Hnnn.
+  intro Hnp.
+  exact (Hnp Hp).
 Qed.
 
 Definition three := 3.
