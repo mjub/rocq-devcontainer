@@ -1,6 +1,6 @@
 (** * Main: Core library definitions and theorems *)
 
-Require Import Utf8.
+From Stdlib Require Import Utf8.
 
 (** Triple negation elimination: a classic exercise in propositional logic. *)
 Theorem double_negation : ∀ P : Prop, ¬ ¬ ¬ P -> ¬ P.
