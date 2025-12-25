@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
+      image: rocq/rocq-prover:9.1.0-native-ocaml-4.14.2-flambda
       options: --user root
 
     steps:

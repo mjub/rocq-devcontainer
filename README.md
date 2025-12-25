@@ -102,12 +102,12 @@ Both files **must be updated together** with the same image tag:
 
 1. In `.devcontainer/devcontainer.json`, update:
    ```json
-   "ROCQ_VERSION": "9.0.1-native-ocaml-4.14.2-flambda"
+   "ROCQ_VERSION": "9.1.0-native-ocaml-4.14.2-flambda"
    ```
 
 2. In `.github/workflows/build.yml`, update:
    ```yaml
-   image: rocq/rocq-prover:9.0.1-native-ocaml-4.14.2-flambda
+   image: rocq/rocq-prover:9.1.0-native-ocaml-4.14.2-flambda
    ```
 
 Available tags: [rocq/rocq-prover on Docker Hub](https://hub.docker.com/r/rocq/rocq-prover/tags)
@@ -118,11 +118,11 @@ Due to devcontainer spec limitations, you must update **two places** in `.devcon
 
 ```json
 "args": {
-    "VSROCQ_VERSION": "2.3.1"  // ← Here
+    "VSROCQ_VERSION": "2.3.4"  // ← Here
 },
 // ...
 "extensions": [
-    "rocq-prover.vsrocq@2.3.1"  // ← And here
+    "rocq-prover.vsrocq@2.3.4"  // ← And here
 ]
 ```
 
