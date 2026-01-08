@@ -1,10 +1,8 @@
 # [🏗️ Rocq Devcontainer Template](https://github.com/mjub/rocq-devcontainer)
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open%20in%20VS%20Code&color=blue)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mjub/rocq-devcontainer)
-![Rocq](https://img.shields.io/badge/Rocq-9.0.1-orange)
-![OCaml](https://img.shields.io/badge/OCaml-4.14.2-orange?logo=ocaml)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
-![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green?logo=github)
+[![Open in Dev Containers](https://img.shields.io/badge/Dev%20Containers-Open%20in%20VS%20Code-2496ED?logo=docker)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mjub/rocq-devcontainer)
+![Rocq](https://img.shields.io/badge/Rocq-9.1.0-ff540a?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FscXVlXzEiIGRhdGEtbmFtZT0iQ2FscXVlIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyOC40MyAyODAuMzciPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNmZjU0MGE7CiAgICAgIH0KICAgIDwvc3R5bGU%2BCiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4MC45NywxODYuMjRjLTE0LjAyLTEwLjE1LTI5Ljg0LTE1LjIyLTQ3LjQ2LTE1LjIyLTIyLjQzLDAtNDIuOTksOS4zNS02MS42OCwyOC4wNGwtODEuMzEsODEuMzFjLTIwLjgzLTEzLjg4LTM3LjM5LTMyLjA0LTQ5LjY3LTU0LjQ3LTEyLjI5LTIyLjQzLTE4LjQyLTQ2LjU5LTE4LjQyLTcyLjUsMC0xNy42MiwzLjItMzUuMzgsOS42MS01My4yN2gxMTYuNTV2LTE2LjgySDI4LjA0Yy03LjQ4LTEwLjQxLTEzLjQ5LTIxLjYzLTE4LjAyLTMzLjY0aDEzOC41OHYtMTYuODJINC44MUMyLjEzLDIyLjQzLjUzLDExLjQ4LDAsMGwxNzUuNDMuNGMyNy43NywwLDUzLjMzLDYuODgsNzYuNywyMC42MywyMy4zNiwxMy43NSw0MS45MiwzMi4zMSw1NS42Nyw1NS42NywxMy43NSwyMy4zNywyMC42Myw0OC45MywyMC42Myw3Ni43LDAsMjUuOS02LjAxLDUwLjA3LTE4LjAyLDcyLjUtNS42MS0xNi4yOC0xNS40Mi0yOS41LTI5LjQ0LTM5LjY1Wk0yNjQuNTUsMTE1LjE1YzMuMzMtMy4zNCw1LjAxLTcuNDEsNS4wMS0xMi4yMnMtMS42Ny04Ljg3LTUuMDEtMTIuMjFjLTMuMzQtMy4zNC03LjQxLTUuMDEtMTIuMjItNS4wMXMtOC44OCwxLjY3LTEyLjIxLDUuMDFjLTMuMzQsMy4zNC01LjAxLDcuNDEtNS4wMSwxMi4yMXMxLjY3LDguODgsNS4wMSwxMi4yMmMzLjMzLDMuMzQsNy40MSw1LjAxLDEyLjIxLDUuMDFzOC44Ny0xLjY3LDEyLjIyLTUuMDFaIi8%2BCjwvc3ZnPg%3D%3D)
+![OCaml](https://img.shields.io/badge/OCaml-4.14.2-EC6813?logo=ocaml)
 [![Build and Deploy](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml/badge.svg)](https://github.com/mjub/rocq-devcontainer/actions/workflows/build.yml)
 
 A **zero-configuration** development environment for [Rocq](https://rocq-prover.org/) (formerly Coq) theorem proving.
@@ -15,15 +13,12 @@ Getting a working Rocq setup can be surprisingly frustrating. Version mismatches
 
 ![Demo of the Rocq Devcontainer](assets/demo.gif)
 
----
 
 ## 📦 Installation
 
 ### 1. Create Your Repository
 
-This is a **template repository**. You can create your own copy instantly:
-
-[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-238636?logo=github)](https://github.com/mjub/rocq-devcontainer/generate)
+This is a **template repository**. You can create your own copy instantly: [![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-238636?logo=github)](https://github.com/mjub/rocq-devcontainer/generate)
 
 > 💡 If you want automatic documentation deployment, enable **GitHub Pages** in your new repository:
 > - Go to **Settings → Pages**
@@ -44,7 +39,6 @@ cd <your-repo>
 
 The container builds automatically with Rocq, the language server, and all extensions pre-configured. ☕ First build takes a few minutes.
 
----
 
 ## 🚀 Usage
 
@@ -83,7 +77,6 @@ Every push to `main` that modifies a `.v` file triggers a GitHub Actions workflo
 2. 📄 Generates HTML documentation
 3. 🌐 Deploys to GitHub Pages at `https://<username>.github.io/<repository>/` (typically < 2 mins ⚡)
 
----
 
 ## ⚙️ Configuration
 
@@ -126,7 +119,6 @@ Due to devcontainer spec limitations, you must update **two places** in `.devcon
 ]
 ```
 
----
 
 ## 🔧 Troubleshooting
 
