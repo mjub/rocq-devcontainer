@@ -18,7 +18,9 @@ Getting a working Rocq setup can be surprisingly frustrating. Version mismatches
 
 ### 1. Create Your Repository
 
-This is a **template repository**. You can create your own copy instantly: [![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-238636?logo=github)](https://github.com/mjub/rocq-devcontainer/generate)
+This is a **template repository**. You can create your own copy instantly:
+
+[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-238636?logo=github)](https://github.com/mjub/rocq-devcontainer/generate)
 
 > 💡 If you want automatic documentation deployment, enable **GitHub Pages** in your new repository:
 > - Go to **Settings → Pages**
